@@ -12,8 +12,9 @@ require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
-require "sprockets/railtie"
+# require "sprockets/railtie"
 # require "rails/test_unit/railtie"
+require "view_component/engine"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -31,5 +32,15 @@ module Quickstart
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.active_job.queue_adapter = :sidekiq
+
+    host = URI(ENV["HOST_URL"])
+    Rails.application.routes.default_url_options = { host: host.host, protocol: host.scheme }
+    config.action_controller.default_url_options = { host: host.host, protocol: host.scheme }
+    config.action_controller.asset_host = host.to_s
+    config.action_mailer.default_url_options = { host: host.host, protocol: host.scheme }
+    config.action_mailer.asset_host = host.to_s
+    config.action_cable.allowed_request_origins = [host.to_s]
   end
 end
