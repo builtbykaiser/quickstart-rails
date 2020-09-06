@@ -1,24 +1,24 @@
-# README
+# Get Started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+1. Click the "Use this template" button
+1. Clone your new repo into your local dev environment & `cd` into the new directory
+1. Change the [.ruby-version](https://github.com/builtbykaiser/quickstart-rails/blob/master/.ruby-version) if needed
+1. Run `bundle install`
+1. Run `yarn install`
+1. Rename `.env.sample` to `.env` (`mv .env.sample .env`)
+1. Find-and-replace "quickstart" (case-insensitive) with your app name
 
-* Ruby version
+## Running the App
+1. Run `docker-compose up -d` (`dcup` if you have the aliases below) to spin up Postgres & Redis
+1. Run `rails s` to spin up the Rails server
+1. Run `./bin/webpack-dev-server` to spin up the Webpack Dev Server
+1. Run `bundle exec sidekiq` to spin up Sidekiq if needed
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Helpful Aliases
+```shell
+alias dcdown='docker-compose down'
+alias dcps='docker-compose ps'
+alias dcup='docker-compose up -d'
+```
