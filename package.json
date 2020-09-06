@@ -2,6 +2,12 @@
   "name": "quickstart",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/pro-duotone-svg-icons": "^5.14.0",
+    "@fortawesome/pro-light-svg-icons": "^5.14.0",
+    "@fortawesome/pro-regular-svg-icons": "^5.14.0",
+    "@fortawesome/pro-solid-svg-icons": "^5.14.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/actiontext": "^6.0.3-2",
     "@rails/activestorage": "^6.0.0",
