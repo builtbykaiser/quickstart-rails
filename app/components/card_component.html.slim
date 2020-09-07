@@ -1,7 +1,15 @@
-.bg-white.shadow.sm:rounded-lg class="#{@wrapper_class}"
-  .px-4.py-5.sm:p-6
-    h3.text-lg.leading-6.font-medium.text-gray-900
-      = @title
+= content_tag :div, class: "bg-white overflow-hidden shadow sm:rounded-lg #{@classes}", data: @data do
+  - if header || simple_header
+    .flex.justify-between.items-center.flex-wrap.sm:flex-no-wrap.border-b.border-gray-200.px-4.py-2.sm:px-6 style="min-height: 3.5rem"
+      - if simple_header
+        h3.text-lg.leading-6.font-medium.text-gray-900 = simple_header
+      - elsif header
+        = header
 
-    .mt-2.text-sm.leading-5.text-gray-500
-      = content
+  - if body
+    .px-4.py-4.sm:p-6
+      = body
+
+  - if footer
+    .border-t.border-gray-200.px-4.py-3.sm:px-6
+      = footer

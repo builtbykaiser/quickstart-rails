@@ -1,3 +1,8 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+button:hover .rotate-on-hover {
+  transition: 0.8s;
+  transform: rotate(360deg);
+}
