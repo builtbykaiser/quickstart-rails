@@ -32,6 +32,9 @@ module Quickstart
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.generators.stylesheets = nil
+    config.generators.helper = nil
+    config.generators.test_framework :rspec, view_specs: false, routing_specs: false
 
     config.active_job.queue_adapter = :sidekiq
 

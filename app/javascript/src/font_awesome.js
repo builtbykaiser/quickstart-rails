@@ -11,6 +11,7 @@ import { faThumbsUp as faThumbsUpSolid } from '@fortawesome/pro-solid-svg-icons/
 import { faThumbsUp as faThumbsUpDuotone } from '@fortawesome/pro-duotone-svg-icons/faThumbsUp'
 import { faGithub as faGithubBrands } from '@fortawesome/free-brands-svg-icons/faGithub'
 import { faRedo as faRedoSolid } from '@fortawesome/pro-solid-svg-icons/faRedo'
+import { faPlus as faPlusSolid } from '@fortawesome/pro-solid-svg-icons/faPlus'
 
 library.add(
   faThumbsUpLight,
@@ -18,7 +19,8 @@ library.add(
   faThumbsUpSolid,
   faThumbsUpDuotone,
   faGithubBrands,
-  faRedoSolid
+  faRedoSolid,
+  faPlusSolid
 );
 
 dom.watch();

@@ -1,0 +1,44 @@
+<% if namespaced? -%>
+require_dependency "<%= namespaced_path %>/application_controller"
+
+<% end -%>
+<% module_namespacing do -%>
+class <%= controller_class_name %>Controller < ApplicationController
+  let(:scoped_<%= plural_table_name %>) { policy_scope(<%= orm_class.all(class_name) %>) }
+  let(:paginated_<%= plural_table_name %>) { pagy(scoped_<%= plural_table_name %>) }
+  let(:pagination) { paginated_<%= plural_table_name %>.first }
+  let(:<%= plural_table_name %>) { paginated_<%= plural_table_name %>.last }
+  let(:<%= singular_table_name %>) { authorize(scoped_<%= plural_table_name %>.find_or_initialize_by(id: params[:id])) }
+
+  def create
+    save
+  end
+
+  def update
+    save
+  end
+
+  def destroy
+    <%= orm_instance.destroy %>
+    redirect_to <%= index_helper %>_url, notice: t('.success')
+  end
+
+  private
+
+  def save
+    if <%= orm_instance.update("secure_params") %>
+      redirect_to <%= model_resource_name %>, notice: t('.success')
+    else
+      render :form
+    end
+  end
+
+  def secure_params
+    <%- if attributes_names.empty? -%>
+    params.fetch(:<%= singular_table_name %>, {})
+    <%- else -%>
+    params.require(:<%= singular_table_name %>).permit(<%= permitted_params %>)
+    <%- end -%>
+  end
+end
+<% end -%>

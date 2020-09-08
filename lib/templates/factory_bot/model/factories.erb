@@ -1,0 +1,29 @@
+FactoryBot.define do
+  factory :<%= "#{class_name.gsub("::", "").underscore}#{explicit_class_option}" %> do
+<%=
+  attributes.map { |attribute|
+results = "    #{attribute.name} "
+    if attribute.name == 'name'
+      results = results + "{ Faker::Name.name }"
+    elsif attribute.name == 'first_name'
+      results = results + "{ Faker::Name.first_name }"
+    elsif attribute.name == 'last_name'
+      results = results + "{ Faker::Name.last_name }"
+    elsif attribute.name.include? 'email'
+      results = results + "{ Faker::Internet.safe_email }"
+    elsif attribute.name.include? 'cell'
+      results = results + "{ Faker::PhoneNumber.cell_phone }"
+    elsif attribute.name.include? 'phone'
+      results = results + "{ Faker::PhoneNumber.phone_number }"
+    elsif attribute.name == 'age'
+      results = results + "{ rand(0..120) }"
+    elsif ['date_of_birth', 'dob'].include?(attribute.name)
+      results = results + "{ Faker::Date.birthday }"
+    else
+      results = results + "{ #{attribute.default.inspect} }"
+    end
+results
+  }.join("\n")
+%>
+  end
+end

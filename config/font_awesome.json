@@ -1,5 +1,6 @@
 {
   "faThumbsUp": ["light", "regular", "solid", "duotone"],
   "faGithub": ["brands"],
-  "faRedo": ["solid"]
+  "faRedo": ["solid"],
+  "faPlus": ["solid"]
 }
