@@ -1,50 +1,44 @@
-.max-w-7xl.mx-auto.py-12.sm:px-6.lg:px-8
-  .max-w-3xl.mx-auto
-    = render(CardComponent.new(classes: 'mb-5')) do |component|
-      - component.with(:simple_header) { "Welcome to Quickstart!" }
+= render CardComponent.new(classes: 'mb-5') do |component|
+  - component.slot :header, title: 'Welcome to Quickstart!'
 
-      - component.with(:body) do
-        p The next few cards will exercise different subsystems. Review each one to make sure everything is working as expected.
+  - component.slot :row do
+    p The next few cards will exercise different subsystems. Review each one to make sure everything is working as expected.
 
-    = render(CardComponent.new(classes: 'mb-5')) do |component|
-      - component.with(:simple_header) { "Font Awesome" }
+= render CardComponent.new(classes: 'mb-5') do |component|
+  - component.slot :header, title: 'Font Awesome'
 
-      - component.with(:body) do
-        .flex.justify-between.text-center
-          .flex-grow
-            i.fal.fa-thumbs-up.fa-3x.text-gray-600
-            .mt-2 Light
+  - component.slot :row do
+    .flex.justify-between.text-center
+      .flex-grow
+        i.fal.fa-thumbs-up.fa-3x.text-gray-600
+        .mt-2 Light
 
-          .flex-grow
-            i.far.fa-thumbs-up.fa-3x.text-gray-600
-            .mt-2 Regular
+      .flex-grow
+        i.far.fa-thumbs-up.fa-3x.text-gray-600
+        .mt-2 Regular
 
-          .flex-grow
-            i.fas.fa-thumbs-up.fa-3x.text-gray-600
-            .mt-2 Solid
+      .flex-grow
+        i.fas.fa-thumbs-up.fa-3x.text-gray-600
+        .mt-2 Solid
 
-          .flex-grow
-            i.fad.fa-thumbs-up.fa-3x.text-gray-600
-            .mt-2 Duotone
+      .flex-grow
+        i.fad.fa-thumbs-up.fa-3x.text-gray-600
+        .mt-2 Duotone
 
-          .flex-grow
-            i.fab.fa-github.fa-3x.text-gray-600
-            .mt-2 Brands
+      .flex-grow
+        i.fab.fa-github.fa-3x.text-gray-600
+        .mt-2 Brands
 
-    = render(CardComponent.new(classes: 'mb-5')) do |component|
-      - component.with(:simple_header) { "Images with Webpack" }
+= render CardComponent.new(classes: 'mb-5') do |component|
+  - component.slot :header, title: 'Images with Webpack'
 
-      - component.with(:body) do
-        = image_pack_tag 'quickstart-leaves.jpg'
+  - component.slot :row, padding: false do
+    = image_pack_tag 'quickstart-leaves.jpg'
 
-    = render(CardComponent.new(classes: 'mb-5', data: {controller: 'hello'})) do |component|
-      - component.with(:header) do
-        h3.text-lg.leading-6.font-medium.text-gray-900 Stimulus
+= render CardComponent.new(classes: 'mb-5', data: {controller: 'hello'}) do |component|
+  - component.slot :header, title: 'Stimulus'
 
-        .flex-shrink-0
-          span.inline-flex.rounded-md.shadow-sm
-            button.relative.inline-flex.items-center.px-3.py-2.border.border-transparent.text-sm.leading-5.font-medium.rounded-md.text-white.bg-indigo-600.hover:bg-indigo-500.focus:outline-none.focus:shadow-outline-indigo.focus:border-indigo-700.active:bg-indigo-700 type="button" data-action="hello#sayHello"
-              i.fas.fa-redo.rotate-on-hover
+  - component.slot :button, icon: 'fas fa-redo transform duration-700 group-hover:rotate-360', text: 'Update', classes: 'group', data: {action: 'hello#sayHello'}
 
-      - component.with(:body) do
-        h1 data-target="hello.output"
+  - component.slot :row do
+    h1 data-target="hello.output"
