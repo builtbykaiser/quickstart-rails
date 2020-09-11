@@ -8,7 +8,7 @@
 1. Ensure you have the npm configs set globally for Font Awesome Pro, or that you have a `.npmrc` file with your Font Awesome Pro auth token ([more info](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro))
 1. Run `bundle install`
 1. Run `yarn install`
-1. Rename `.env.sample` to `.env` (`mv .env.sample .env`)
+1. Copy `.env.sample` to `.env` (`cp .env.sample .env`)
 1. Find-and-replace "quickstart" (case-insensitive) with your app name
 
 ## Running the App
