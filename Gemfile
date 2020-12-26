@@ -3,18 +3,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby IO.read('.ruby-version').strip
 
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', '>= 1.4.4', require: false
 gem 'name_of_person'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 5.0'
 gem 'pundit'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+gem 'rails', '~> 6.1.0'
 gem 'redis', '~> 4.0'
 gem 'sidekiq'
 gem 'slim-rails'
 gem 'turbolinks', '~> 5'
 gem 'view_component'
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -27,7 +27,7 @@ end
 group :development do
   gem 'annotate'
   gem 'listen', '~> 3.2'
+  gem 'rack-mini-profiler', '~> 2.0'
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console', '>= 4.1.0'
 end
