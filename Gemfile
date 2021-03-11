@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby IO.read('.ruby-version').strip
 
+gem 'amazing_print', '>= 1.3.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'name_of_person'
 gem 'pagy'
