@@ -4,7 +4,7 @@ module.exports = {
     './app/**/*.html.slim',
     './app/components/**/*.rb',
     './app/helpers/**/*.rb',
-    './app/javascript/**/*.js',
+    './app/packs/**/*.js',
   ],
   theme: {
     rotate: {

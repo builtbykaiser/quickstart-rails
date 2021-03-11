@@ -42,7 +42,7 @@
 = render CardComponent.new(classes: 'mb-5', data: {controller: 'hello'}) do |component|
   - component.slot :header, title: 'Stimulus'
 
-  - component.slot :button, icon: 'fas fa-redo transform duration-700 group-hover:rotate-360', text: 'Update', classes: 'group', data: {action: 'hello#sayHello'}
+  - component.slot :button, icon: 'fas fa-arrow-rotate-forward transform duration-700 group-hover:rotate-360', text: 'Update', classes: 'group', data: {action: 'hello#sayHello'}
 
   - component.slot :row do
     h1 data-target="hello.output"

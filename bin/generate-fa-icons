@@ -2,7 +2,7 @@
 require 'json'
 
 INPUT = 'config/font_awesome.json'.freeze
-OUTPUT = 'app/javascript/src/font_awesome.js'.freeze
+OUTPUT = 'app/packs/src/font_awesome.js'.freeze
 
 MODULE_MAP = {
   thin:    '@fortawesome/pro-thin-svg-icons',
