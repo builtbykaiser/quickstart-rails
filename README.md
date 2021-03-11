@@ -4,11 +4,8 @@
 
 1. Click the "Use this template" button
 1. Clone your new repo into your local dev environment & `cd` into the new directory
-1. Change the [.ruby-version](https://github.com/builtbykaiser/quickstart-rails/blob/master/.ruby-version) if needed
-1. Ensure you have the npm configs set globally for Font Awesome Pro, or that you have a `.npmrc` file with your Font Awesome Pro auth token ([more info](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro))
-1. Run `bundle install`
-1. Run `yarn install`
-1. Copy `.env.sample` to `.env` (`cp .env.sample .env`)
+1. Login to Font Awesome and find your 'Pro Package Token' ([located here](https://fontawesome.com/account), [more info here](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro))
+1. Run `./bin/setup`
 1. Find-and-replace "quickstart" (case-insensitive) with your app name
 
 ## Running the App
