@@ -40,9 +40,22 @@
     = image_pack_tag 'quickstart-leaves.jpg'
 
 = render CardComponent.new(classes: 'mb-5', data: {controller: 'hello'}) do |component|
-  - component.slot :header, title: 'Stimulus'
+  - component.slot :header, title: 'Stimulus', subtitle: 'Click the button to check if Stimulus is working.'
 
   - component.slot :button, icon: 'fas fa-arrow-rotate-forward transform duration-700 group-hover:rotate-360', text: 'Update', classes: 'group', data: {action: 'hello#sayHello'}
 
   - component.slot :row do
     h1 data-target="hello.output"
+
+= render CardComponent.new(classes: 'mb-5') do |component|
+  - component.slot :header do
+    div
+      ' Custom
+      strong
+        ' Content
+      ' in
+      a.text-blue-600.underline href="#" Header
+      i.fas.fa-check.text-green-600.ml-2
+
+  - component.slot :row do
+    | Content...

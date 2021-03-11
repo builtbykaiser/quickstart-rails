@@ -1,34 +1,33 @@
-= content_tag :div, class: "bg-white overflow-hidden shadow sm:rounded-lg #{@classes}", data: @data do
+= content_tag :div, class: "bg-white overflow-hidden shadow sm:rounded-lg divide-y divide-gray-200 #{@classes}", data: @data do
 
-  - if header
-    .flex.justify-between.items-center.flex-wrap.sm:flex-nowrap.border-b.border-gray-200.px-4.py-2.sm:px-6 style="min-height: 3.5rem"
-      - if header.content
-        = header.content
+  ul.divide-y.divide-gray-200
+    - if header
+      .flex.justify-between.items-center.flex-wrap.sm:flex-nowrap.px-4.py-2.sm:px-6 style="min-height: 3.5rem"
+        - if header.content
+          = header.content
 
-      - else
-        div
-          - if header.title
-            h3.text-lg.leading-6.font-medium.text-gray-900 = header.title
+        - else
+          div
+            - if header.title
+              h3.text-lg.leading-6.font-medium.text-gray-900 = header.title
 
-          - if header.subtitle
-            .text-sm.leading-4.text-gray-500 = header.subtitle
+            - if header.subtitle
+              p.text-sm.leading-4.text-gray-500 = header.subtitle
 
-        - if buttons.any?
           .flex-shrink-0
-            - buttons.each do |button|
-              span.inline-flex.rounded-md.shadow-sm.ml-1
-                = content_tag :button, type: "button", class: "relative inline-flex items-center px-3 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-indigo focus:border-indigo-700 active:bg-indigo-700 #{button.classes}", data: button.data
-                  - if button.icon
-                    i class="#{button.icon} #{'mr-2' if button.text}"
-                  - if button.text
-                    .leading-3 = button.text
+            - if buttons.any?
+              .flex-shrink-0
+                - buttons.each do |button|
+                  span.inline-flex.rounded-md.shadow-sm.ml-1
+                    = content_tag :button, type: "button", class: "relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 #{button.classes}", data: button.data
+                      - if button.icon
+                        i class="#{button.icon} #{'mr-2' if button.text}"
+                      = button.text
 
-  - if rows.any?
-    ul
-      - rows.each do |row|
-        = content_tag :li, class: "border-t first:border-t-0 border-gray-200 #{row.padding ? 'p-6' : 'p-0'} #{row.classes}", data: row.data
-          = row.content
+    - rows.each do |row|
+      = content_tag :li, class: "#{row.padding ? 'p-4 sm:px-6' : 'p-0'} #{row.classes}", data: row.data
+        = row.content
 
   - if footer
-    = content_tag :div, class: "border-t border-gray-200 px-4 py-3 sm:px-6 #{footer.classes}", data: footer.data
+    = content_tag :div, class: "px-4 py-4 sm:px-6 #{footer.classes}", data: footer.data
       = footer.content

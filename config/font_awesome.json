@@ -2,5 +2,6 @@
   "faThumbsUp": ["thin", "light", "regular", "solid", "duotone"],
   "faGithub": ["brands"],
   "faArrowRotateForward": ["solid"],
+  "faCheck": ["solid"],
   "faPlus": ["solid"]
 }
