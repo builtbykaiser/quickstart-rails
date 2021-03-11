@@ -43,7 +43,8 @@ FILE
     FileUtils.cp '.env.sample', '.env'
   end
 
-  puts "\n== Preparing database =="
+  puts "\n== Preparing databases =="
+  system! 'docker-compose up -d'
   system! 'bin/rails db:prepare'
 
   puts "\n== Removing old logs and tempfiles =="
