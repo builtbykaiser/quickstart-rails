@@ -1,10 +1,11 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
-const environment = require('./environment')
+const webpackConfig = require('./base')
+
 const chokidar = require('chokidar')
 const execa = require('execa')
 
-environment.config.devServer.before = (app, server) => {
+webpackConfig.devServer.before = (app, server) => {
   chokidar.watch([
     'config/locales/*.yml',
     'app/views/**/*.slim',
@@ -17,4 +18,4 @@ environment.config.devServer.before = (app, server) => {
   ]).on('change', () => execa('bin/generate-fa-icons'))
 }
 
-module.exports = environment.toWebpackConfig()
+module.exports = webpackConfig
