@@ -2,8 +2,10 @@
 
 ## Installation
 
-1. Click the "Use this template" button
-1. Clone your new repo into your local dev environment & `cd` into the new directory
+[<img width="296" alt="image" src="https://user-images.githubusercontent.com/2530982/110723937-82aa8900-81da-11eb-9eba-d560bde568f1.png">](https://github.com/purplefi-sh/quickstart-rails/generate)
+
+1. Click the button above to create a new repo with this template
+1. Clone the repo into your local dev environment & `cd` into the new directory
 1. Login to Font Awesome and find your 'Pro Package Token' ([located here](https://fontawesome.com/account), [more info here](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro))
 1. Run `./bin/setup`
 1. Find-and-replace "quickstart" (case-insensitive) with your app name
