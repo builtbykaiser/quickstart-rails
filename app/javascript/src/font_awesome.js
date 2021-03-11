@@ -5,6 +5,7 @@ import { config, library, dom } from '@fortawesome/fontawesome-svg-core'
 // Fix flicker with Turbolinks (https://fontawesome.com/how-to-use/on-the-web/using-with/turbolinks)
 config.mutateApproach = 'sync'
 
+import { faThumbsUp as faThumbsUpThin } from '@fortawesome/pro-thin-svg-icons/faThumbsUp'
 import { faThumbsUp as faThumbsUpLight } from '@fortawesome/pro-light-svg-icons/faThumbsUp'
 import { faThumbsUp as faThumbsUpRegular } from '@fortawesome/pro-regular-svg-icons/faThumbsUp'
 import { faThumbsUp as faThumbsUpSolid } from '@fortawesome/pro-solid-svg-icons/faThumbsUp'
@@ -14,6 +15,7 @@ import { faRedo as faRedoSolid } from '@fortawesome/pro-solid-svg-icons/faRedo'
 import { faPlus as faPlusSolid } from '@fortawesome/pro-solid-svg-icons/faPlus'
 
 library.add(
+  faThumbsUpThin,
   faThumbsUpLight,
   faThumbsUpRegular,
   faThumbsUpSolid,

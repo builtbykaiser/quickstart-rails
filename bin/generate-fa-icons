@@ -5,10 +5,11 @@ INPUT = 'config/font_awesome.json'.freeze
 OUTPUT = 'app/javascript/src/font_awesome.js'.freeze
 
 MODULE_MAP = {
+  thin:    '@fortawesome/pro-thin-svg-icons',
   light:   '@fortawesome/pro-light-svg-icons',
   regular: '@fortawesome/pro-regular-svg-icons',
   solid:   '@fortawesome/pro-solid-svg-icons',
-  duotone:  '@fortawesome/pro-duotone-svg-icons',
+  duotone: '@fortawesome/pro-duotone-svg-icons',
   brands:  '@fortawesome/free-brands-svg-icons'
 }.freeze
 
