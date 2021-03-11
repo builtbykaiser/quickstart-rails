@@ -1,7 +1,7 @@
 = content_tag :div, class: "bg-white overflow-hidden shadow sm:rounded-lg #{@classes}", data: @data do
 
   - if header
-    .flex.justify-between.items-center.flex-wrap.sm:flex-no-wrap.border-b.border-gray-200.px-4.py-2.sm:px-6 style="min-height: 3.5rem"
+    .flex.justify-between.items-center.flex-wrap.sm:flex-nowrap.border-b.border-gray-200.px-4.py-2.sm:px-6 style="min-height: 3.5rem"
       - if header.content
         = header.content
 
@@ -17,7 +17,7 @@
           .flex-shrink-0
             - buttons.each do |button|
               span.inline-flex.rounded-md.shadow-sm.ml-1
-                = content_tag :button, type: "button", class: "relative inline-flex items-center px-3 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 #{button.classes}", data: button.data
+                = content_tag :button, type: "button", class: "relative inline-flex items-center px-3 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-indigo focus:border-indigo-700 active:bg-indigo-700 #{button.classes}", data: button.data
                   - if button.icon
                     i class="#{button.icon} #{'mr-2' if button.text}"
                   - if button.text

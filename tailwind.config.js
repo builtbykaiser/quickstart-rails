@@ -24,9 +24,5 @@ module.exports = {
     rotate: ['responsive', 'hover', 'focus', 'group-hover'],
     scale: ['responsive', 'hover', 'focus', 'group-hover']
   },
-  plugins: [],
-  future: {
-    purgeLayersByDefault: true,
-    removeDeprecatedGapUtilities: true
-  }
+  plugins: []
 }
