@@ -1,13 +1,35 @@
-= render CardComponent.new(classes: 'mb-5') do |component|
-  - component.slot :header, title: 'Welcome to Quickstart!'
+= render Card::Component.new classes: 'mb-5' do |c|
+  - c.header title: 'Welcome to Quickstart!'
 
-  - component.slot :row do
+  - c.row do
     p The next few cards will exercise different subsystems. Review each one to make sure everything is working as expected.
 
-= render CardComponent.new(classes: 'mb-5') do |component|
-  - component.slot :header, title: 'Font Awesome'
+= render Card::Component.new classes: 'mb-5' do |c|
+  - c.header title: 'Cards can have headers', subtitle: 'With optional subtitles'
 
-  - component.slot :row do
+  - c.buttons [ \
+    { text: 'And' },
+    { text: 'Buttons' },
+  ]
+
+  - c.row do
+    p They can have rows
+
+  - c.row do
+    p As many as you want
+
+  - c.footer do
+    ' And
+    em footers!
+
+= render Card::Component.new classes: 'mb-5' do |c|
+  - c.row do
+    p Cards can also just have a single row.
+
+= render Card::Component.new classes: 'mb-5' do |c|
+  - c.header title: 'Font Awesome'
+
+  - c.row do
     .flex.justify-between.text-center
       .flex-grow
         i.fat.fa-thumbs-up.fa-3x.text-gray-600
@@ -33,29 +55,22 @@
         i.fab.fa-github.fa-3x.text-gray-600
         .mt-2 Brands
 
-= render CardComponent.new(classes: 'mb-5') do |component|
-  - component.slot :header, title: 'Images with Webpack'
+= render Card::Component.new classes: 'mb-5' do |c|
+  - c.header title: 'Images with Webpack'
 
-  - component.slot :row, padding: false do
+  - c.row padding: false do
     = image_pack_tag 'quickstart-leaves.jpg'
 
-= render CardComponent.new(classes: 'mb-5', data: {controller: 'hello'}) do |component|
-  - component.slot :header, title: 'Stimulus', subtitle: 'Click the button to check if Stimulus is working.'
+= render Card::Component.new classes: 'mb-5', data: {controller: 'hello'} do |c|
+  - c.header title: 'Stimulus',
+    subtitle: 'Click the button to check if Stimulus is working.'
 
-  - component.slot :button, icon: 'fas fa-arrow-rotate-forward transform duration-700 group-hover:rotate-360', text: 'Update', classes: 'group', data: {action: 'hello#sayHello'}
+  - c.buttons [{ \
+      icon: 'fas fa-arrow-rotate-forward transform duration-700 group-hover:rotate-360',
+      text: 'Update',
+      classes: 'group',
+      data: { action: 'hello#sayHello' } \
+    }]
 
-  - component.slot :row do
+  - c.row do
     h1 data-target="hello.output"
-
-= render CardComponent.new(classes: 'mb-5') do |component|
-  - component.slot :header do
-    div
-      ' Custom
-      strong
-        ' Content
-      ' in
-      a.text-blue-600.underline href="#" Header
-      i.fas.fa-check.text-green-600.ml-2
-
-  - component.slot :row do
-    | Content...

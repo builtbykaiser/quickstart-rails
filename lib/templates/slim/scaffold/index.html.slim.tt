@@ -1,8 +1,13 @@
-= render CardComponent.new do |component|
-  - component.slot :header, title: '<%= plural_table_name.titleize %>'
+= render Card::Component.new classes: 'mb-5' do |component|
+  - component.header title: '<%= plural_table_name.titleize %>'
 
-  - component.slot :button, classes: 'group', icon: 'fas fa-plus transform duration-300 group-hover:scale-125', text: 'New'
+  - component.buttons [ \
+    { text: 'New', icon: 'fas fa-plus transform duration-300 group-hover:scale-125', classes: 'group' } \
+  ]
 
   - <%= plural_table_name %>.each do |<%= singular_table_name %>|
-    - component.slot :row do
+    - component.row do
       span <%= singular_table_name %> #{<%= singular_table_name %>.id}
+
+.flex.justify-center
+  == pagy_nav(pagination)

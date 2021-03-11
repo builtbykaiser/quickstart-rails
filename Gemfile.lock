@@ -121,6 +121,7 @@ GEM
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    pagy (3.11.0)
     pg (1.2.3)
     puma (5.2.2)
       nio4r (~> 2.0)
@@ -234,6 +235,7 @@ DEPENDENCIES
   faker
   listen (~> 3.2)
   name_of_person
+  pagy
   pg (>= 0.18, < 2.0)
   puma (~> 5.0)
   pundit

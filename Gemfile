@@ -5,6 +5,7 @@ ruby IO.read('.ruby-version').strip
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'name_of_person'
+gem 'pagy'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 5.0'
 gem 'pundit'
