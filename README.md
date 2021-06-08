@@ -11,14 +11,7 @@
 1. Find-and-replace "quickstart" (case-insensitive) with your app name
 
 ## Running the App
-1. Run `docker-compose up -d` (`dcup` if you have the aliases below) to spin up Postgres & Redis
+1. Run `docker compose up -d` to spin up Postgres & Redis
 1. Run `rails s` to spin up the Rails server
 1. Run `./bin/webpack-dev-server` to spin up the Webpack Dev Server
 1. Run `bundle exec sidekiq` to spin up Sidekiq if needed
-
-## Helpful Aliases
-```shell
-alias dcdown='docker-compose down'
-alias dcps='docker-compose ps'
-alias dcup='docker-compose up -d'
-```
