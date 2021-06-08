@@ -1,4 +1,5 @@
-const { webpackConfig, merge } = require('@rails/webpacker')
+const { webpackConfig } = require('@rails/webpacker')
+const { merge } = require('webpack-merge') // workaround for https://github.com/rails/webpacker/issues/2984
 
 const customConfig = {
   resolve: {
