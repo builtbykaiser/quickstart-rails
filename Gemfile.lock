@@ -205,9 +205,8 @@ GEM
     temple (0.8.2)
     thor (1.1.0)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
+    turbo-rails (0.5.9)
+      rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     view_component (2.33.0)
@@ -246,7 +245,7 @@ DEPENDENCIES
   sidekiq
   slim-rails
   spring
-  turbolinks (~> 5)
+  turbo-rails
   tzinfo-data
   view_component
   web-console (>= 4.1.0)

@@ -2,7 +2,7 @@
 
 import { config, library, dom } from '@fortawesome/fontawesome-svg-core'
 
-// Fix flicker with Turbolinks (https://fontawesome.com/how-to-use/on-the-web/using-with/turbolinks)
+// Fix flicker with Turbo (https://fontawesome.com/how-to-use/on-the-web/using-with/turbolinks)
 config.mutateApproach = 'sync'
 
 import { faThumbsUp as faThumbsUpThin } from '@fortawesome/pro-thin-svg-icons/faThumbsUp'

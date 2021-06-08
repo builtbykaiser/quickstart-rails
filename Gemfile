@@ -14,7 +14,7 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 gem 'redis', '~> 4.0'
 gem 'sidekiq'
 gem 'slim-rails'
-gem 'turbolinks', '~> 5'
+gem 'turbo-rails'
 gem 'view_component'
 gem 'webpacker', github: 'rails/webpacker'
 
