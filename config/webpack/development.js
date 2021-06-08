@@ -15,7 +15,7 @@ webpackConfig.devServer.before = (app, server) => {
 
   chokidar.watch([
     'config/font_awesome.json'
-  ]).on('change', () => execa('bin/generate-fa-icons'))
+  ]).on('change', () => execa('bin/generate-font-awesome-icons'))
 }
 
 module.exports = webpackConfig
