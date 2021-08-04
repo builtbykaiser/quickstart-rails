@@ -1,0 +1,13 @@
+= render Card::Component.new classes: 'mb-5' do |component|
+  - component.header title: 'Foos'
+
+  - component.buttons [ \
+    { text: 'New', icon: 'fas fa-plus transform duration-300 group-hover:scale-125', classes: 'group' } \
+  ]
+
+  - foos.each do |foo|
+    - component.row do
+      span foo #{foo.id}
+
+.flex.justify-center
+  == pagy_nav(pagination)
